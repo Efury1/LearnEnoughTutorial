@@ -9,7 +9,11 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  <!-- For internet explorer -->
+  <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+    <![endif]-->
  <!-- Not putting _ because rails knows I mean _header. Telling Rails it's a partial %> -->
   <%= render 'home/header'%>
   <%= render 'home/masthead'%>
