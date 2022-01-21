@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'static_pages/home'
+  get 'static_pages/resume'
   resources :microposts
   resources :users
   get 'welcome/homepage'
