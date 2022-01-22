@@ -10,3 +10,19 @@ html {
 body {
   padding-top: 60px;
 }
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;;
+}
+
+.centre h1 {
+  margin-bottom: 60px;
+}
