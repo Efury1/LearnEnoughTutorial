@@ -4,6 +4,7 @@
     <title>Eliza's Portfolio</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
+    <%= render 'layouts/shim' %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -17,18 +18,11 @@
  <!-- Not putting _ because rails knows I mean _header. Telling Rails it's a partial %> -->
 
   <body>
-    <header class="navbar navbar-fixed-tip navbar-inverse"
-      <div class="container">
-        <%= link_to "Sample App", '#', id: "logo" %>
-        <nav>
-          <ul class= "nav navbar-nav pull-right">
-            <li><%= link_to "Home", '#' %></li>
-            <li><%= link_to "Help", '#' %></li>
-            <li><%= link_to "Login", '#' %></li>
-          </ul>
-        </nav>
-        </div>
-      </header>
-    <%= yield %>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+   </div>
+
   </body>
 </html>
