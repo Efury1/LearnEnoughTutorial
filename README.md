@@ -9,6 +9,7 @@ Things you may want to cover:
 
 * System dependencies
 
+
 * Configuration
 
 * Database creation
@@ -23,3 +24,8 @@ Things you may want to cover:
 
 * ...
 # Portfolio
+
+
+#To Do
+
+Need to do the Guardfile
