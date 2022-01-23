@@ -5,6 +5,7 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
   #   assert true
   # end
   test "layout links" do
-  end
+    get root-help_path
+    assert_template 'static_pages/home'
   end
 end
