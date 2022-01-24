@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   # GET /users or /users.json
   def index
     @users = User.find(params[:id])
+    # debugger
   end
 
   # GET /users/1 or /users/1.json
