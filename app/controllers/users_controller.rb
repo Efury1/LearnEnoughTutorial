@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   #Put @users in show instead of index
   # GET /users/1 or /users/1.json
+
   def show
     @users = User.find(params[:id])
   end

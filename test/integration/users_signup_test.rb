@@ -9,4 +9,19 @@ class UsersSignupTest < ActionDispatch::
     end
     assert_template 'users/new'
   end
-end
+
+# Simulation of what we would do in browser
+  test "valid signup information" do
+      get signup_path
+      assert_difference 'User.count', 1 do
+        # Post to users path
+        post users_path, params: { user: { name:  "Example User",
+                                           email: "user@example.com",
+                                           password:              "password",
+                                           password_confirmation: "password" } }
+      end
+      # Won't work unless you follow redirect
+      follow_redirect!
+      assert_template 'users/show'
+    end
+  end
