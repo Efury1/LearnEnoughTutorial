@@ -1,15 +1,10 @@
 class UsersController < ApplicationController
   # before_action :set_user, only: %i[ show edit update destroy ]
 
-  # GET /users or /users.json
-  def index
-    @users = User.find(params[:id])
-    # debugger
-  end
-
+  #Put @users in show instead of index
   # GET /users/1 or /users/1.json
   def show
-    @user = User.first
+    @users = User.find(params[:id])
   end
 
   # GET /users/new
@@ -17,14 +12,11 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  # GET /users/1/edit
-  def edit
-  end
-
   # POST /users or /users.json
   def create
     @user = User.new(user_params)
     if @user.save
+      flash[:success] = "Welcome to sample app"
       redirect_to @user
     else
       render 'new'
