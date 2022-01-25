@@ -1,6 +1,11 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  #Asset digests allow you to set far-future HTTP expiration dates on all assests
+  #yet still be able to expire then through the digest params
+  config.assets.digest = true
+  #Force all access to the app over SS, use secure cookies
+  config.force_ssl = true
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

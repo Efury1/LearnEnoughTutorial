@@ -1,2 +1,0 @@
-class WelcomehomepageController < ApplicationController
-end
