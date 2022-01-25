@@ -1,2 +1,0 @@
-module WelcomehomepageHelper
-end

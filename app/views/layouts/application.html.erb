@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%=  %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title><%= %></title>
+    <%= stylesheet_link_tag "application", media: 'all',
+                                          'data-turbolinks-track' => true %>
+    <%= javascript_pack_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <!-- For internet explorer -->
-  <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-      </script>
-    <![endif]-->
- <!-- Not putting _ because rails knows I mean _header. Telling Rails it's a partial %> -->
-
   <body>
     <%= render 'layouts/header' %>
     <div class="container">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %><\div>
+      <% end %>
       <%= yield %>
       <%= render 'layouts/footer' %>
+      <%= debug(params) if Rails.env.development? %>
    </div>
   </body>
 </html>
