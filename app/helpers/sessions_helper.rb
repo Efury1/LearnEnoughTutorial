@@ -30,15 +30,15 @@ end
   end
 
   #Forgets a persistent session
-  def forgot(user)
-    user.forgot
+  def forget(user)
+    user.forget
     cookies.delete(:user_id)
     cookies.delete(:remember_token )
   end
 
   # Log out the current user
   def log_out
-    forgot(current_user)
+    forget(current_user)
     session.delete(:user_id)
     @current_user = nil
   end
