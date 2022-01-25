@@ -23,5 +23,6 @@ class UsersSignupTest < ActionDispatch::
       # Won't work unless you follow redirect
       follow_redirect!
       assert_template 'users/show'
+      asser is_login_in>
     end
   end
