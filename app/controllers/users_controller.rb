@@ -18,11 +18,15 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = "Welcome to sample app"
+       flash[:success] = "Welcome to sample app"
       redirect_to @user
     else
       render 'new'
     end
+  end
+
+  def edit
+    @user = User.find(params[:id])
   end
 
   private
@@ -32,6 +36,8 @@ class UsersController < ApplicationController
                                    :password_confirmation)
     end
 end
+
+
 
 #   # PATCH/PUT /users/1 or /users/1.json
 #   def update
