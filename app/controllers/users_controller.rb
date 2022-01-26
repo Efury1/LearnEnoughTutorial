@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
+    # @user = User.find(params[:id])
     @user = User.new
   end
 
@@ -29,6 +30,15 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:success] = "Profile updated"
+    else
+      render 'edit'
+    end
+  end
+
   private
 
     def user_params
@@ -36,40 +46,3 @@ class UsersController < ApplicationController
                                    :password_confirmation)
     end
 end
-
-
-
-#   # PATCH/PUT /users/1 or /users/1.json
-#   def update
-#     respond_to do |format|
-#       if @user.update(user_params)
-#         format.html { redirect_to user_url(@user), notice: "User was successfully updated." }
-#         format.json { render :show, status: :ok, location: @user }
-#       else
-#         format.html { render :edit, status: :unprocessable_entity }
-#         format.json { render json: @user.errors, status: :unprocessable_entity }
-#       end
-#     end
-#   end
-#
-#   # DELETE /users/1 or /users/1.json
-#   def destroy
-#     @user.destroy
-#
-#     respond_to do |format|
-#       format.html { redirect_to users_url, notice: "User was successfully destroyed." }
-#       format.json { head :no_content }
-#     end
-#   end
-#
-#   private
-#     # Use callbacks to share common setup or constraints between actions.
-#     def set_user
-#       @user = User.find(params[:id])
-#     end
-#
-#     # Only allow a list of trusted parameters through.
-#     def user_params
-#       params.require(:user).permit(:name, :email)
-#     end
-# end
