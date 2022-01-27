@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   get 'sessions/new'
   root           'static_pages#home'
-  get 'about'   => 'static_pages#about'
   get 'help'    => 'static_pages#help'
+  get 'about'   => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
   get 'signup'  => 'users#new'
+  get 'users'   => 'users#index'
   get 'login'   => 'sessions#new'
   post 'login'  => 'sessions#create'
-  get 'users'   => 'users#index'
   delete 'logout' => 'sessions#destroy'
   resources :microposts
   resources :users
