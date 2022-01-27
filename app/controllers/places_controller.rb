@@ -5,7 +5,10 @@ class PlacesController < ApplicationController
   end
 
   def index
-    @places = Place.order('created_at DESC')
+    if Rails.env.production?
+      @places = Place.order('created_at DESC')
+      @country = request.location.city
+    end
   end
 
   def new

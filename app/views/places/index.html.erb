@@ -1,11 +1,21 @@
 <header><h1 class="display-4">Places</h1></header>
 
-<%= link_to 'Add place', new_place_path, class: 'btn btn-primary btn-lg' %>
-
-<div class="card">
-  <div class="card-block">
-    <ul>
-      <%# <%= render @places %> %>
-    </ul>
+<p>
+  User Country: <%= @user_location %><br />
+  User city: <%= @user_location %><br />
+<p>
+<br>
+<div class="places" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Place</h6>
+    <p class="card-text">Description of place</p>
+    <a href="#" class="card-link">Edit</a>
+    <a href="#" class="card-link">Link to website</a>
+    <p><strong>Options: <span> </span></strong></p>
   </div>
 </div>
+
+<br><br>
+
+<%= link_to 'Add place', new_place_path, class: 'btn btn-primary btn-lg' %>
