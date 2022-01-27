@@ -18,13 +18,13 @@
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Help", help_path %></li>
         <% if logged_in? %>
-          <li><%= link_to "Users", users_path %></li>
-
-              <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-              <li class="divider"></li>
-              <li>
-                <%= link_to "Log out", logout_path, method: :delete %>
+            <li><%= link_to "Places", places_path %></li>
+            <li><%= link_to "Users", users_path %></li>
+            <li><%= link_to "Profile", current_user %></li>
+            <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+            <li class="divider"></li>
+          <li>
+            <%= link_to "Log out", logout_path, method: :delete %>
           </li>
         <% else %>
           <li><%= link_to "Log in", login_path %></li>

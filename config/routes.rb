@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :places, except: [:update, :edit, :destroy]
   get 'sessions/new'
   root           'static_pages#home'
   get 'help'    => 'static_pages#help'
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
   get 'signup'  => 'users#new'
   get 'users'   => 'users#index'
   get 'login'   => 'sessions#new'
+  get 'places'  => 'places#index'
   post 'login'  => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
   resources :microposts
