@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem 'pry'
 #Bootstrap from learnenough Rails
 gem 'bootstrap-sass', '3.4.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
@@ -24,6 +25,10 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Add for learnenough
 gem 'faker', '2.11.0'
+
+#learnenough
+gem 'will_paginate',           '3.3.0'
+gem 'bootstrap-will_paginate', '1.0.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
