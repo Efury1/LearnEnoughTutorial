@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
 
   def index
-    @users = User.all
+    @users = User.paginate(page: params[:page])
   end
 
   def show
@@ -22,8 +22,8 @@ class UsersController < ApplicationController
 
   # POST /users or /users.json
   def create
-    user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
+    user = User.find_by_email(params[:sessions][:email].downcase)
+    if user && user.authenticate(params[:sessions][:password])
       forwarding_url = session[:forwarding_url]
       reset_session
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)

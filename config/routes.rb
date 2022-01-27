@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'signup'  => 'users#new'
   get 'login'   => 'sessions#new'
   post 'login'  => 'sessions#create'
-  get 'index'   => 'users#index'
+  get 'users'   => 'users#index'
   delete 'logout' => 'sessions#destroy'
   resources :microposts
   resources :users
