@@ -47,6 +47,11 @@ module SessionsHelper
     cookies.delete(:remember_token )
   end
 
+  def session_token
+    remember_digest || remember
+  end
+
+
   # Log out the current user
   def log_out
     forget(current_user)
@@ -57,10 +62,6 @@ module SessionsHelper
   def redirect_back_or(default)
     redirect_to(session[:forwarding_url] || default)
     session.delete(:forwarding_url)
-  end
-
-  def session_token
-    remember_digest || remember
   end
 
   def store_location
