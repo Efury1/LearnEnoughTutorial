@@ -20,7 +20,7 @@ before_action :correct_user,   only: [:edit, :update]
     if @user.save
       reset_session
       log_in @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = "Rate, add and explore new lunch places"
       redirect_to root_url
     else
       render 'new'
