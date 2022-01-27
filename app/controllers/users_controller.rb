@@ -3,6 +3,8 @@ class UsersController < ApplicationController
 
   #Put @users in show instead of index
   # GET /users/1 or /users/1.json
+  before_action :logged_in_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update]
 
   def show
     @user = User.find(params[:id])
@@ -16,22 +18,23 @@ class UsersController < ApplicationController
 
   # POST /users or /users.json
   def create
-    @user = User.new(user_params)
-    if @user.save
-      log_in @user
-       flash[:success] = "Welcome to sample app"
-      redirect_to @user
+    user = User.find_by(email: params[:session][:email].downcase)
+    if user && user.authenticate(params[:session][:password])
+      forwarding_url = session[:forwarding_url]
+      reset_session
+      params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+      log_in user
+      redirect_to forwarding_url || user
     else
+      flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
     end
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:success] = "Profile updated"
     else
@@ -45,4 +48,16 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
     end
+
+    def logged_in_user
+     unless logged_in?
+       flash[:danger] = "Please log in."
+       redirect_to login_url
+     end
+   end
+   # Confirms the correct user
+   def correct_user
+     @user = User.find(params[:id])
+     redirect_to(root_user) unless current_user?(@user)
+   end
 end

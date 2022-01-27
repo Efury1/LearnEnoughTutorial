@@ -1,4 +1,9 @@
 eliza:
   name: Eliza
-  email: eliza@exmaple.compiled
+  email: eliza@example.compiled
+  password_digest: <%= User.digest('password') %>
+
+fury:
+  name: fury
+  email: fury@example.compiled
   password_digest: <%= User.digest('password') %>
