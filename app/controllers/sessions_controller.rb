@@ -1,11 +1,13 @@
 class SessionsController < ApplicationController
-
+  include SessionsHelper
   def new
   end
 
   def create
-    user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
+    user = User.find_by(name: params[:name])
+    # if user && user.authenticate(params[:session][:password])
+    if user.try(:authenticate, params[:password])
+      session[:user_id] = user.id
       forwarding_url = session[:forwarding_url]
       reset_session
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)

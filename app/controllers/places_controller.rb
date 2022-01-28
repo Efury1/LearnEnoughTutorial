@@ -6,8 +6,10 @@ class PlacesController < ApplicationController
 
   def index
     if Rails.env.production?
-      @places = Place.order('created_at DESC')
-      @country = request.location.city
+      @country = request.location.country
+      @city = request.location.city
+      country_code = request.location.country_code
+      @currency = country_code.upcase == "AU" ? "AUD" : "USD"
     end
   end
 
