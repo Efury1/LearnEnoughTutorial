@@ -43,10 +43,7 @@ ActiveRecord::Schema.define(version: 2022_01_30_231516) do
     t.string "activation_digest"
     t.boolean "activated", default: false
     t.datetime "activated_at"
-<<<<<<< HEAD
     t.string "reset_digest"
-=======
->>>>>>> account-activation
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
