@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'pry'
+gem 'active_storage_validations', '0.8.9'
 gem 'bootstrap-sass', '3.4.1'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.4'
 gem 'puma', '~> 5.0'
@@ -16,7 +17,6 @@ gem 'bootstrap-will_paginate', '1.0.0'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'image_processing',           '1.9.3'
 gem 'mini_magick',                '4.9.5'
-gem 'active_storage_validations', '0.8.9'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'geocoder'
 gem 'google_places'
@@ -45,6 +45,9 @@ group :test do
   gem 'webdrivers'
 end
 
+group :production do
+  gem 'aws-sdk-s3', '1.87.0', require: false
+end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pg'
