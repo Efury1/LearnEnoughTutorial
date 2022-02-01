@@ -19,7 +19,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: portfolio_development
+  database: portfolio_test
 
   # database: db/test.sqlite3
 
