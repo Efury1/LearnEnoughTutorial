@@ -5,7 +5,8 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :email
       #Tell db that it should not be false
-      t.timestamps null: false
+      t.timestamps
+      # null: false
     end
   end
 end
