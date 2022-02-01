@@ -8,10 +8,9 @@ before_action :admin_user, only: :destroy
   end
 
   def show
-    @user = User.find(params[:id])
-    redirect_to root_url and return unless FILL_IN
-    # @microposts = @user.microposts.paginate(page: params[:page])
-  end
+   @user = User.find(params[:id])
+   @microposts = @user.microposts.paginate(page: params[:page])
+ end
 
   def new
     @user = User.new
@@ -65,6 +64,10 @@ before_action :admin_user, only: :destroy
         flash[:danger] = "Please log in."
         redirect_to login_url
       end
+    end
+
+    def admin_user
+      redirect_to(root_url) unless current_user.admin?
     end
 
     # Confirms the correct user.

@@ -5,6 +5,7 @@ eliza:
   admin: true
   activated: true
   activated_at: <%= Time.zone.now %>
+  admin: true
 
 fury:
   name: fury
@@ -20,7 +21,7 @@ michael:
   admin: true
   activated: true
   activated_at: <%= Time.zone.now %>
-  
+
 archer:
   name: Sterling Archer
   email: duchess@example.gov
