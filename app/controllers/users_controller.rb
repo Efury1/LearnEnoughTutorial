@@ -4,7 +4,7 @@ before_action :correct_user,   only: [:edit, :update]
 before_action :admin_user, only: :destroy
 
   def index
-   @users = User.where(activated:FILL_IN).paginate(page: params[:page])
+    @users = User.paginate(page: params[:page])
   end
 
   def show
