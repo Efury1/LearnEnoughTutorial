@@ -22,10 +22,9 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
-# Portfolio
 
-
-#To Do
-
-Need to do the Guardfile
+https://ibb.co/9ZhgMMz
+https://ibb.co/nntY68J
+https://ibb.co/QpK6yM7
+https://ibb.co/0VrDDpG
+https://ibb.co/nRhMyHm
