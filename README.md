@@ -1,5 +1,8 @@
 # README
 
+**About application
+The application allows user to post and connect over their facourite places to eat. This application works within a local enviroment. However, it does have heroku connected.
+
 *Get appolication running
 git clone
 cd portfolio
@@ -30,3 +33,4 @@ rails sever
 <a href="https://ibb.co/0VrDDpG"><img src="https://i.ibb.co/FqzxxkD/Screen-Shot-2022-02-02-at-10-53-38-am.png" alt="Screen-Shot-2022-02-02-at-10-53-38-am" border="0"></a>
 <br> Your profile with your feed </br>
 <a href="https://ibb.co/nRhMyHm"><img src="https://i.ibb.co/XVmxPhL/Screen-Shot-2022-02-02-at-10-53-00-am.png" alt="Screen-Shot-2022-02-02-at-10-53-00-am" border="0"></a>
+<br> The creation of posts </br>
