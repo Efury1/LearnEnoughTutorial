@@ -1,22 +1,22 @@
 # README
 
-**About application
+*About application <br>
 The application allows user to post and connect over their facourite places to eat. This application works within a local enviroment. However, it does have heroku connected.
 
-*Get appolication running
+*Get appolication running <br>
 git clone
 cd portfolio
 
-*Node
+*Node <br>
 nvm install 16.13.0
 node -v
 
-*Install packages with yarn
+*Install packages with yarn <br>
 add jquery and bootstrap
 gem install bundler
 bundle install
 
-*In enviroment
+*In enviroment <br>
 rails db:migrate
 rails db:seed
 rails sever
