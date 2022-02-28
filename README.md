@@ -1,27 +1,27 @@
 # README
 
-** About application <br>
+# About application <br>
 The application follows the Learn Enough Tutorial
 
-** Get appolication running <br>
+# Get appolication running <br>
 git clone
 cd portfolio
 
-** Node <br>
+# Node <br>
 nvm install 16.13.0
 node -v
 
-** Install packages with yarn <br>
+# Install packages with yarn <br>
 add jquery and bootstrap
 gem install bundler
 bundle install
 
-** In enviroment <br>
+# In enviroment <br>
 rails db:migrate
 rails db:seed
 rails sever
 
-** Application 
+# Application 
 
 <a href="https://ibb.co/9ZhgMMz"><img src="https://i.ibb.co/sWCRBBk/Screen-Shot-2022-02-02-at-10-54-16-am.png" alt="Screen-Shot-2022-02-02-at-10-54-16-am" border="0"></a>
 <br> Update profile details <br>
